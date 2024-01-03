@@ -8,7 +8,7 @@ import './Home.css'
 
 const Home = () => {
 
-  const [post, setPost] = useState([])
+  const [posts, setPosts] = useState([])
 
   const getPost = async () => {
 
@@ -19,6 +19,8 @@ const Home = () => {
       const data = response.data;
 
       console.log(data)
+
+      setPosts(data)
 
     } catch (error) {
       console.log(error)
@@ -35,7 +37,18 @@ const Home = () => {
 
   return (
     <div>
-      <p>Home</p>
+      <h1>Ultimos posts</h1>
+      {posts.length === 0 ? <p>Carregando...</p> : (
+        posts.map((post) => (
+          <div className="post" key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+            <Link to={`/post/${post.id}`} className="btn">
+              ler mais
+            </Link>
+          </div>
+        ))
+      )}
     </div>
   )
 }
