@@ -21,7 +21,7 @@
     text-transform: uppercase;
 }
 
-.btn{
+.btn {
     background-color: #fff;
     color: #0e1217;
     border: 1px solid #fff;
@@ -34,7 +34,7 @@
     transition: 0.3s;
 }
 
-.btn:hover{
+.btn:hover {
     color: #fff;
     background-color: #0e1217;
 }
