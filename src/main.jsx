@@ -8,21 +8,26 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import Home from './routes/Home.jsx'
 import NewPost from './routes/NewPost.jsx'
 import Post from './routes/Post.jsx'
+import Admin from './routes/Admin.jsx'
 
 const router = createBrowserRouter([
   {
-    element:<App/>,
-    children:[
+    element: <App />,
+    children: [
       {
-        path:"/",
-        element: <Home/>
+        path: "/",
+        element: <Home />
       },
       {
-        path:"/new",
-        element:<NewPost/>
-      },{
-        path:"/posts/:id",
-        element:<Post/>,
+        path: "/new",
+        element: <NewPost />
+      }, {
+        path: "/posts/:id",
+        element: <Post />,
+      },
+      {
+        path:"/admin",
+        element:<Admin/>
       }
     ]
 
@@ -31,6 +36,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
