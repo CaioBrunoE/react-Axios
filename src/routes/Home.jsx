@@ -18,7 +18,6 @@ const Home = () => {
 
       const data = response.data;
 
-      console.log(data)
 
       setPosts(data)
 
